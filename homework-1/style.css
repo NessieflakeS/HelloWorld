@@ -55,8 +55,8 @@
     background-color: rgb(32, 32, 39);
     padding-top: 94px;
     padding-bottom: 144px;
-    background-image: url(image/Star-1.svg), url(image/Star-11.svg), url(image/Star-12.svg);
-    background-position: 1054px 77px, 58px 810px, 75px 862px;
+    background-image: url(image/Star-1.svg), url(image/Star-11.svg), url(image/Star-12.svg), url(image/Star-7.svg), url(image/Star-6.svg), url(image/Star-8.svg), url(image/Star-10.svg);
+    background-position: 1054px 77px, 58px 810px, 75px 862px, 1300px 1613px, 1370px 1646px, 1370px 4886px, 1300px 4936px;
     background-repeat: no-repeat;
 }
 
@@ -441,7 +441,7 @@
     }
 
     .header {
-        background-image: url(img/Vector.svg), url(img/Starmob2.svg), url(img/Starmob3.svg), url(img/Starmob4.svg), url(img/Starmob5.svg);
+        background-image: url(image/Vector.svg), url(image/Starmob2.svg), url(image/Starmob3.svg), url(image/Starmob4.svg), url(image/Starmob5.svg);
         background-position: 489px -103px, 37px 97px, 91px 64px, 400px 580px, 370px 557px;
         background-repeat: no-repeat;
     }
@@ -473,7 +473,7 @@
     }
 
     .header {
-        background-image: url(img/Vector.svg), url(img/Starmob2.svg), url(img/Starmob3.svg), url(img/Starmob4.svg), url(img/Starmob5.svg);
+        background-image: url(image/Vector.svg), url(image/Starmob2.svg), url(image/Starmob3.svg), url(image/Starmob4.svg), url(image/Starmob5.svg);
         background-position: 489px -103px, 37px 97px, 91px 64px, 303px 580px, 272px 557px;
         background-repeat: no-repeat;
     }
@@ -574,7 +574,7 @@
     }
 
     .header {
-        background-image: url(img/Vector.svg), url(img/Starmob2.svg), url(img/Starmob3.svg), url(img/Starmob4.svg), url(img/Starmob5.svg);
+        background-image: url(image/Vector.svg), url(image/Starmob2.svg), url(image/Starmob3.svg), url(image/Starmob4.svg), url(image/Starmob5.svg);
         background-position: 300px -103px, 15px 97px, 22px 64px, 287px 580px, 257px 557px;
         background-repeat: no-repeat;
     }
