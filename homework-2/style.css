@@ -55,17 +55,9 @@
     background-color: rgb(32, 32, 39);
     padding-top: 94px;
     padding-bottom: 144px;
-    background-image: url(image/Star-1.svg), url(image/Star-11.svg), url(image/Star-12.svg);
-    background-position: 1054px 77px, 58px 810px, 75px 862px;
+    background-image: url(image/Star-1.svg), url(image/Star-11.svg), url(image/Star-12.svg), url(image/Star-7.svg), url(image/Star-6.svg), url(image/Star-8.svg), url(image/Star-10.svg);
+    background-position: 1054px 77px, 58px 810px, 75px 862px, 1300px 1613px, 1370px 1646px, 1370px 4886px, 1300px 4936px;
     background-repeat: no-repeat;
-}
-
-.cart__content {
-    width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 30px;
-    box-sizing: border-box;
 }
 
 .cart {
@@ -74,20 +66,77 @@
     gap: 32px;
 }
 
+.cart-content {
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    box-sizing: border-box;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
 .cart-content__text-btn {
     width: 285px;
     height: 55px;
     font-size: 18px;
     font-weight: 600;
-    margin-left: 15px;
     margin-right: 20px;
     margin-bottom: 26px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 10;
     padding: 16px 28px 16px 28px;
+    border-radius: 60px;
+    background-color: rgb(32, 32, 39);
+    color: white;  
+    transition: color 0.3s; 
+}
+
+.cart-content__text-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+.cart-content__text {
+    width: 450px;
+    gap: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 48px;
+    background: white;
+    border-radius: 30px;
+}
+
+.cart-content__text-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: none;
+    align-self: stretch;
+    margin: 24px 0px;
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 59px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.cart-content__text-num {
+    padding-right: 50px;
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: left;
 }
 
 .top__h1 {
@@ -232,128 +281,6 @@
     font-family: Montserrat;
 }
 
-@media (min-width: 1024px) and (max-width: 1280px) {
-    .center {
-        padding-left: calc(50% - 450px);
-        padding-right: calc(50% - 450px);
-    }
-
-    .cart-content__img {
-        width: 450px;
-    }
-
-    .cart-content__text {
-        width: 450px;
-        gap: 25px;
-    }
-
-    .cart-content__text-name {
-        padding-top: 15px;
-        font-size: 42px;
-    }
-
-    .cart-content__text-num {
-        padding-right: 50px;
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .center {
-        padding-left: calc(50% - 376px);
-        padding-right: calc(50% - 376px);
-    }
-
-    .top {
-        padding-top: 48px;
-        padding-bottom: 48px;
-    }
-
-
-    .game-mini__img {
-        width: 343px;
-    }
-
-    .game-mini__name1 {
-        display: none;
-    }
-
-    .game-mini__namebr {
-        display: inline;
-        color: rgb(32, 32, 39);
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 39px;
-        padding-left: 32px;
-        padding-right: 32px;
-        padding-bottom: 36px;
-        padding-top: 16px;
-        font-family: Montserrat;
-    }
-
-    .cart-content {
-        gap: 10px;
-        width: 700px;
-    }
-
-    .cart-content__text-name1 {
-        display: none;
-    }
-
-    .cart-content__text-namebr {
-        color: rgb(32, 32, 39);
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 39px;
-        padding-left: 15px;
-        padding-right: 20px;
-        font-family: Montserrat;
-        padding-top: 15px;
-    }
-
-    .cart-content__img {
-        width: 350px;
-    }
-
-    .cart-content__text {
-        width: 350px;
-        gap: 15px;
-    }
-
-    .cart-content__text-name {
-        padding-top: 15px;
-        font-size: 38px;
-        font-weight: 700;
-        line-height: 44px;
-        padding-left: 15px;
-        padding-right: 20px;
-    }
-
-    .cart-content__text-num {
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 24px;
-        padding-left: 15px;
-        padding-right: 20px;
-    }
-
-    .cart-content__text-btn {
-        width: 285px;
-        height: 55px;
-        font-size: 18px;
-        font-weight: 600;
-        margin-left: 15px;
-        margin-right: 20px;
-        margin-bottom: 26px;
-    }
-
-    .top-cart {
-        font-family: Montserrat;
-        font-size: 42px;
-        font-weight: 700;
-        line-height: 49px;
-    }
-}
-
 @media (min-width: 425px) and (max-width: 767px) {
     .center {
         padding-left: calc(50% - 200px);
@@ -398,6 +325,15 @@
         margin-top: 36px;
     }
 
+    .game {
+        grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
     .top {
         padding-top: 48px;
         padding-bottom: 48px;
@@ -410,6 +346,11 @@
         line-height: 49px;
         padding-top: 0px;
         padding-bottom: 48px;
+        display: none;
+    }
+
+    .cart { 
+        display: none;
     }
 
     .cart-content__img {
@@ -457,7 +398,7 @@
     }
 
     .header {
-        background-image: url(img/Vector.svg), url(img/Starmob2.svg), url(img/Starmob3.svg), url(img/Starmob4.svg), url(img/Starmob5.svg);
+        background-image: url(image/Vector.svg), url(image/Starmob2.svg), url(image/Starmob3.svg), url(image/Starmob4.svg), url(image/Starmob5.svg);
         background-position: 489px -103px, 37px 97px, 91px 64px, 400px 580px, 370px 557px;
         background-repeat: no-repeat;
     }
@@ -489,7 +430,7 @@
     }
 
     .header {
-        background-image: url(img/Vector.svg), url(img/Starmob2.svg), url(img/Starmob3.svg), url(img/Starmob4.svg), url(img/Starmob5.svg);
+        background-image: url(image/Vector.svg), url(image/Starmob2.svg), url(image/Starmob3.svg), url(image/Starmob4.svg), url(image/Starmob5.svg);
         background-position: 489px -103px, 37px 97px, 91px 64px, 303px 580px, 272px 557px;
         background-repeat: no-repeat;
     }
@@ -541,6 +482,19 @@
         line-height: 49px;
         padding-top: 0px;
         padding-bottom: 48px;
+        display: none;
+    }
+
+    .game {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .cart {
+        display: none;
     }
 
     .cart-content {
@@ -573,19 +527,12 @@
     }
 
     .cart-content__text-btn {
-        width: 285px;
+        width: 255px;
         height: 55px;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 600;
-        margin-left: 15px;
-        margin-right: 20px;
-        margin-bottom: 26px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 10;
-        padding: 16px 28px 16px 28px;
+        margin-left: 29px;
+        margin-right: 29px;
     }
 
     .cart-content {
@@ -597,7 +544,7 @@
     }
 
     .header {
-        background-image: url(img/Vector.svg), url(img/Starmob2.svg), url(img/Starmob3.svg), url(img/Starmob4.svg), url(img/Starmob5.svg);
+        background-image: url(image/Vector.svg), url(image/Starmob2.svg), url(image/Starmob3.svg), url(image/Starmob4.svg), url(image/Starmob5.svg);
         background-position: 300px -103px, 15px 97px, 22px 64px, 287px 580px, 257px 557px;
         background-repeat: no-repeat;
     }
