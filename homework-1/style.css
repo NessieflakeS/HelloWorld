@@ -325,6 +325,10 @@
         margin-top: 36px;
     }
 
+    .game {
+        grid-template-columns: 1fr;
+    }
+
     .top {
         padding-top: 48px;
         padding-bottom: 48px;
@@ -474,6 +478,10 @@
         padding-top: 0px;
         padding-bottom: 48px;
         display: none;
+    }
+
+    .game {
+        grid-template-columns: 1fr;
     }
 
     .cart {
