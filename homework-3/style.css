@@ -78,7 +78,7 @@
     transition: all 0.3s ease;
 }
 
-.cart-content:nth-child(even) {
+.cart-content:nth-of-type(even) {
     flex-direction: row-reverse;
 }
 
@@ -110,7 +110,7 @@
     gap: 25px;
     display: flex;
     flex-direction: column;
-    padding: 48px;
+    padding-left: 48px;
 }
 
 .cart-content__text-name {
