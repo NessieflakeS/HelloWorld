@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini games</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header center">
+        <h1 class="header__h1">Добро пожаловать <br> на мой сайт мини-игр</h1>
+        <p class="header__p">Тебе предстоит пройти несколько увлекательных игр.<br>
+            Если готов, нажимай <b>"Поехали!"</b> и <b>приступай.</b></p>
+        <a class="header-btn" href="#go">
+            <button class="header__btn">Поехали!</button>
+        </a>
+    </header>
+    <div class="top center">
+        <div>
+            <h1 class="top__h1" id="go">Об играх</h1>
+            <p class="top__p">В моей коллекции представлено 6 игр на разные темы.<br> Игры несложные - в них может
+                поиграть каждый.<br>
+                Все игры доступны для пользования.</p>
+        </div>
+        <div class="game center">
+            <a class="game-mini game-mini__1" href="#game1">
+                <img class="game-mini__img" src="image/gamemini-1.png" alt="">
+                <p class="game-mini__num">Игра №1</p>
+                <h3 class="game-mini__name">Угадай число</h3>
+            </a>
+            <a class="game-mini game-mini__2" href="#game2">
+                <img class="game-mini__img" src="image/gamemini-2.png" alt="">
+                <p class="game-mini__num">Игра №2</p>
+                <h3 class="game-mini__name">Простая <br> арифметика</h3>
+            </a>
+            <a class="game-mini game-mini__3" href="#game3">
+                <img class="game-mini__img" src="image/gamemini-3.png" alt="">
+                <p class="game-mini__num">Игра №3</p>
+                <h3 class="game-mini__name1">Переверни текст</h3>
+                <h3 class="game-mini__namebr">Переверни <br>текст</h3>
+            </a>
+            <a class="game-mini game-mini__4" href="#game4">
+                <img class="game-mini__img" src="image/gamemini-4.png" alt="">
+                <p class="game-mini__num">Игра №4</p>
+                <h3 class="game-mini__name">Камень,<br> ножницы,<br> бумага</h3>
+            </a>
+            <a class="game-mini game-mini__5" href="#game5">
+                <img class="game-mini__img" src="image/gamemini-5.png" alt="">
+                <p class="game-mini__num">Игра №5</p>
+                <h3 class="game-mini__name">Простая <br> викторина</h3>
+            </a>
+            <a class="game-mini game-mini__6" href="#game6">
+                <img class="game-mini__img" src="image/gamemini-6.png" alt="">
+                <p class="game-mini__num">Игра №6</p>
+                <h3 class="game-mini__name">Генератор <br> случайных <br> цветов</h3>
+            </a>
+        </div>
+        <h1 class="top-cart center">Мини-игры</h1>
+        <div class="cart center">
+            <article id="game1" class="cart-content">
+                <div class="cart-content__text">
+                    <h2 class="cart-content__text-name">Угадай число</h2>
+                    <p class="cart-content__text-num">Попробуй угадать случайное число от 1 до 100.</p>
+                    <button class="cart-content__text-btn">Играть!</button>
+                </div>
+                <div>
+                    <img class="cart-content__img" src="image/gamemax-1.png" alt="">
+                </div>
+            </article>
+            <article id="game2" class="cart-content">
+                <div>
+                    <img class="cart-content__img" src="image/gamemax-2.png" alt="">
+                </div>
+                <div class="cart-content__text">
+                    <h2 class="cart-content__text-name">Простая <br> арифметика</h2>
+                    <p class="cart-content__text-num">Попробуй решить простые арифметические задачи.</p>
+                    <button class="cart-content__text-btn">Играть!</button>
+                </div>
+            </article>
+            <article id="game3" class="cart-content">
+                <div class="cart-content__text">
+                    <h2 class="cart-content__text-name">Переверни текст</h2>
+                    <p class="cart-content__text-num">Попробуй ввести текст, который будет перевернут.</p>
+                    <button class="cart-content__text-btn">Играть!</button>
+                </div>
+                <img class="cart-content__img" src="image/gamemax-3.png" alt="">
+            </article>
+            <article id="game4" class="cart-content">
+                <div class="cart-content__text">
+                    <h2 class="cart-content__text-name">Камень,<br> ножницы,<br> бумага</h2>
+                    <p class="cart-content__text-num">Сыграй в популярную игру против компьютера.</p>
+                    <button class="cart-content__text-btn">Играть!</button>
+                </div>
+                <img class="cart-content__img" src="image/gamemax-4.png" alt="">
+            </article>
+            <article id="game5" class="cart-content">
+                <div class="cart-content__text">
+                    <h2 class="cart-content__text-name">Простая <br> викторина</h2>
+                    <p class="cart-content__text-num">Отвечай на вопросы викторины с вариантами ответов.</p>
+                    <button class="cart-content__text-btn">Играть!</button>
+                </div>
+                <img class="cart-content__img" src="image/gamemax-5.png" alt="">
+            </article>
+            <article id="game6" class="cart-content">
+                <div class="cart-content__text">
+                    <h2 class="cart-content__text-name">Генератор <br> случайных <br> цветов</h2>
+                    <p class="cart-content__text-num cart-content__text-num--big">Игра, в которой при клике на кнопку
+                        фон страницы меняется на случайный.</p>
+                    <button class="cart-content__text-btn">Играть!</button>
+                </div>
+                <img class="cart-content__img" src="image/gamemax-6.png" alt="">
+            </article>
+        </div>
+    </div>
+    <footer class="footer center">
+        <p class="footer__p">
+            Все права защищены.
+        </p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+
+</html>
