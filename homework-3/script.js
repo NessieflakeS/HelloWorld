@@ -56,7 +56,6 @@ alert(Number(a) + Number(b));
 
 
 let monthNumber = 12; 
-
 if (monthNumber < 1 || monthNumber > 12) {
     console.log("Номер месяца должен быть от 1 до 12");
 } else {
@@ -85,17 +84,18 @@ if (monthNumber < 1 || monthNumber > 12) {
 }
 
 
-let userinput = prompt("Пожалуйста, введите любое число");
+let input = prompt("Пожалуйста, введите любое число");
 
-let number = Number(userInput);
-
-if (isNaN(number)) {
-    alert("Вы ввели не число!");
+if (input === null) {
+    alert("Вы отменили ввод");
+} else if (userInput.trim() === "") {
+    alert("Вы ничего не ввели");
 } else {
-    if (number % 2 === 0) {
-        alert("Число четное");
+    let number = Number(input);
+    if (isNaN(number)) {
+        alert("Вы ввели не число!");
     } else {
-        alert("Число нечетное");
+        alert(number % 2 === 0 ? "Число четное" : "Число нечетное");
     }
 }
 

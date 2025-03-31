@@ -78,7 +78,7 @@
     transition: all 0.3s ease;
 }
 
-.cart-content:nth-of-type(even) {
+.cart > article:nth-child(even) {
     flex-direction: row-reverse;
 }
 
