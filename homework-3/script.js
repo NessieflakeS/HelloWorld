@@ -1,4 +1,4 @@
-function checkPassword() {
+
     let password = 'пароль';
     let userInput = prompt('Введите пароль');
     if (userInput === password) {
@@ -6,9 +6,9 @@ function checkPassword() {
     } else {
         alert('Пароль введен неправильно');
     }
-}
 
-function checkc() {
+
+
     let c;
     c = 0;
     if (c > 0 && c < 10) {
@@ -34,9 +34,9 @@ function checkc() {
     } else {
         console.log("Неверно");
     }
-}
 
-function checkde() {
+
+
     let d = 120;  
     let e = 50;  
     if (d > 100 || e > 100) {
@@ -44,15 +44,15 @@ function checkde() {
     } else {
         console.log("Неверно");
     }
-}
 
-function checkab() {
+
+
     let a = '2';
     let b = '3';
     alert(Number(a) + Number(b));  
-}
 
-function checkmonth() {
+
+
     let monthNumber = 12; 
     if (monthNumber < 1 || monthNumber > 12) {
         console.log("Номер месяца должен быть от 1 до 12");
@@ -80,9 +80,9 @@ function checkmonth() {
                 break;
         }
     }
-}
 
-function checkchetnechet() {
+
+
     let input = prompt("Пожалуйста, введите любое число");
     if (input === null) {
         alert("Вы отменили ввод");
@@ -96,7 +96,7 @@ function checkchetnechet() {
             alert(number % 2 === 0 ? "Число четное" : "Число нечетное");
         }
     }
-}
+
 
 
 
