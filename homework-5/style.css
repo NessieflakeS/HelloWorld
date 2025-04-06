@@ -282,15 +282,49 @@
     font-family: Montserrat;
 }
 
-@media (min-width: 425px) and (max-width: 767px), (min-width: 320px) and (max-width: 424px) {
+@media (min-width: 425px) and (max-width: 767px) {
+    .center {
+        padding-left: calc(50% - 200px);
+        padding-right: calc(50% - 200px);
+    }
+
+    .header {
+        padding-top: 164px;
+        padding-bottom: 165px;
+        background-image: url(image/Vector.svg), url(image/Starmob2.svg), url(image/Starmob3.svg), url(image/Starmob4.svg), url(image/Starmob5.svg);
+        background-position: 489px -103px, 37px 97px, 91px 64px, 400px 580px, 370px 557px;
+        background-repeat: no-repeat;
+        text-align: center;
+    }
+
+    .header__h1 {
+        font-size: 40px;
+        line-height: 49px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .header__p {
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        margin-bottom: 36px;
+    }
+
+    .header__btn {
+        width: 285px;
+        height: 55px;
+        font-size: 16px;
+        margin: 0 auto;
+    }
+
     .top__h1, .top__p, .game {
         display: none;
     }
 
     .top-cart {
-        display: block !important;
+        display: block;
         font-size: 40px;
-        font-weight: 700;
         line-height: 49px;
         text-align: center;
         padding-bottom: 32px;
@@ -303,19 +337,17 @@
         flex-direction: column;
         gap: 24px;
         align-items: center;
-        margin-top: 0;
-        margin-bottom: 32px;
+        margin: 0 auto;
     }
 
     .cart-content {
-        display: flex !important;
+        width: 100%;
+        max-width: 400px;
         flex-direction: column !important;
-        width: 100% !important;
-        max-width: 400px !important;
-        border-radius: 30px !important;
-        background: white !important;
-        overflow: hidden !important;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+        background: white;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     #game1 .cart-content__img { content: url(image/gamemini-1.png); }
@@ -326,107 +358,108 @@
     #game6 .cart-content__img { content: url(image/gamemini-6.png); }
 
     .cart-content__img {
-        width: 100% !important;
-        height: 200px !important;
-        object-fit: cover !important;
-        display: block !important;
-        order: 1 !important;
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
     }
 
     .cart-content__text {
-        order: 2 !important; 
-        width: 100% !important;
-        padding: 16px !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 12px !important;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .cart-content__text-name {
-        font-size: 24px !important;
-        font-weight: 700 !important;
-        line-height: 29px !important;
-        margin: 0 !important;
-        color: rgb(32, 32, 39) !important;
-        text-align: left !important;
+        font-size: 24px;
+        line-height: 29px;
+        margin: 0;
+        color: rgb(32, 32, 39);
     }
 
-
     .cart-content__text-num {
-        font-size: 16px !important;
-        font-weight: 400 !important;
-        line-height: 20px !important;
-        color: rgb(32, 32, 39) !important;
-        margin: 0 !important;
-        text-align: left !important;
+        font-size: 16px;
+        line-height: 20px;
+        color: rgb(32, 32, 39);
+        margin: 0;
     }
 
     .cart-content__text-btn {
-        width: 100% !important;
-        max-width: 285px !important;
-        height: 55px !important;
-        font-size: 16px !important;
-        font-weight: 600 !important;
-        border-radius: 60px !important;
-        background: rgb(32, 32, 39) !important;
-        color: white !important;
-        border: none !important;
-        margin-top: 16px !important;
-        cursor: pointer !important;
-        transition: all 0.3s !important;
-        order: 3 !important;
+        width: 100%;
+        max-width: 285px;
+        height: 55px;
+        font-size: 16px;
+        margin: 16px auto 0;
+        background: rgb(32, 32, 39);
+        color: white;
+        border: none;
+        border-radius: 60px;
+        transition: all 0.3s;
     }
 
     .cart-content__text-btn:hover {
-        background: white !important;
-        color: black !important;
-        border: 1px solid rgb(32, 32, 39) !important;
+        background: white;
+        color: black;
+        border: 1px solid rgb(32, 32, 39);
     }
 
-    .cart > article:nth-child(even),
-    .cart > article:nth-child(odd) {
-        flex-direction: column !important;
+    .footer {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .footer__p {
+        font-size: 16px;
+        line-height: 20px;
     }
 }
 
 @media (min-width: 320px) and (max-width: 424px) {
-    .top-cart {
-        font-size: 32px !important;
-        line-height: 39px !important;
-        padding-bottom: 24px !important;
+    .center {
+        padding-left: calc(50% - 150px);
+        padding-right: calc(50% - 150px);
     }
 
-    .cart {
-        gap: 16px !important;
+    .header {
+        background-position: 300px -103px, 15px 97px, 22px 64px, 287px 580px, 257px 557px;
+    }
+
+    .header__btn {
+        width: 255px;
     }
 
     .cart-content {
-        max-width: 300px !important;
+        max-width: 300px;
     }
 
     .cart-content__img {
-        height: 180px !important;
+        height: 180px;
     }
 
     .cart-content__text {
-        padding: 12px !important;
+        padding: 12px;
     }
 
     .cart-content__text-name {
-        font-size: 20px !important;
-        line-height: 24px !important;
+        font-size: 20px;
+        line-height: 24px;
     }
 
     .cart-content__text-num {
-        font-size: 14px !important;
-        line-height: 18px !important;
+        font-size: 14px;
+        line-height: 18px;
     }
 
     .cart-content__text-btn {
-        max-width: 255px !important;
-        height: 50px !important;
-        font-size: 14px !important;
-        margin-top: 12px !important;
+        max-width: 255px;
+        height: 50px;
+        font-size: 14px;
+    }
+
+    .top-cart {
+        font-size: 32px;
+        line-height: 39px;
+        padding-bottom: 24px;
     }
 }
