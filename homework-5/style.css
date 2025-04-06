@@ -360,7 +360,6 @@
     .cart-content__img {
         order: 1 !important;
         width: 100% !important;
-        height: 200px !important;
         object-fit: cover !important;
     }
 

@@ -1,48 +1,42 @@
-for (let i = 0; i < 2; i++) {
-    console.log("Привет");
-}
-
-let i = 1;
-while (i <= 5) {
-    console.log(i);
-    i++;
-}
-
-let p = 7;
-while (p <= 22) {
-    console.log(i);
-    p++;
-}
-
-let obj = {
-    "Коля": '200',
-    "Вася": '300',
-    "Петя": '400'
-};
-
-for (let name in obj) {
-    console.log(name + " — зарплата " + obj[name] + " долларов");
-}
-
-let n = 1000; 
-let num = 0;  
-
-while (n >= 50) {
-    n = n / 2; 
-    num++;     
-}
-
-console.log("Результат:", n);      
-console.log("Количество итераций:", num); 
-
-
-let firstFriday = 3; 
-
-for (let day = firstFriday; day <= 31; day += 7) {
-    console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`);
+function startNumberGame() {
+    const secretNumber = Math.floor(Math.random() * 100) + 1;
+    let attempts = 0;
+    
+    alert("Я загадал число от 1 до 100. Попробуй угадать!");
+    
+    while(true) {
+      const guess = parseInt(prompt("Введи свою догадку:"));
+      
+      if(isNaN(guess)) {
+        alert("Пожалуйста, введи число!");
+        continue;
+      }
+      
+      attempts++;
+      
+      if(guess === secretNumber) {
+        alert(`🎉 Поздравляю! Ты угадал за ${attempts} попыток.`);
+        break;
+      } else if(guess < secretNumber) {
+        alert("Моё число БОЛЬШЕ твоего. Попробуй ещё!");
+      } else {
+        alert("Моё число МЕНЬШЕ твоего. Попробуй ещё!");
+      }
+    }
 }
 
 
+function getMinNumber(a, b) {
+    if (a < b) {
+      return a;
+    } else {
+      return b;
+    }
+}
 
+
+function checkEvenOdd(num) {
+    return num % 2 === 0 ? 'Число четное' : 'Число нечетное';
+  }
 
 
