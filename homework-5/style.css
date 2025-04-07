@@ -234,7 +234,6 @@
     font-weight: 700;
     line-height: 39px;
     padding-left: 32px;
-    padding-right: 32px;
     padding-bottom: 36px;
     padding-top: 16px;
     font-family: Montserrat;
@@ -261,13 +260,11 @@
     font-size: 16px;
     font-weight: 500;
     margin-left: 32px;
-    margin-right: 32px;
     margin-top: 32px;
     padding: 8px 16px 10px 16px;
     font-family: Montserrat;
     border-radius: 52.58px;
     background: rgb(247, 247, 247);
-    width: 92px;
     height: 36px;
     align-content: center;
     width: fit-content;
