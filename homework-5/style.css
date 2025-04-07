@@ -188,6 +188,7 @@
     background-color: white;
     border-radius: 30px;
     transition: transform 1s;
+    padding: 0 32px 32px 32px;
 }
 
 .game-mini:hover {
@@ -261,6 +262,7 @@
     font-weight: 500;
     margin-left: 32px;
     margin-top: 32px;
+    margin-bottom: 16px;
     padding: 8px 16px 10px 16px;
     font-family: Montserrat;
     border-radius: 52.58px;
