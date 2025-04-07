@@ -98,6 +98,7 @@
     background-color: rgb(32, 32, 39);
     color: white;  
     transition: color 0.3s; 
+    margin-left: 0;
 }
 
 .cart-content__text-btn:hover {
@@ -113,6 +114,7 @@
     padding-left: 48px;
     align-items: flex-start;
     text-align: left;
+    margin-right: auto;
 }
 
 .cart-content__text-name {
