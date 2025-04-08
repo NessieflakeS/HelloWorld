@@ -35,7 +35,6 @@
 .header-btn {
     font-family: Montserrat;
     box-sizing: border-box;
-    border: 1px solid rgb(32, 32, 39);
     border-radius: 60px;
     background: rgb(32, 32, 39);
     width: 247px;
@@ -491,18 +490,18 @@
     }
 
     .header-btn {
-        width: 285px;
-        height: 55px;
-        font-family: Montserrat;
-        color: rgb(255, 255, 255);
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 20px;
-        text-align: center;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 16px 28px 16px 28px;
+    width: 285px;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10;
+    padding: 16px 28px 16px 28px;
+    box-sizing: border-box;
+    border: 1px solid rgb(32, 32, 39);
+    border-radius: 60px;
+    background: rgb(32, 32, 39);
     }
 
     .cart {
