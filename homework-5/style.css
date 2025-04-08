@@ -77,9 +77,19 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
     position: relative;
+    min-height: 500px;
 }
 
-.cart > article:nth-child(even) {
+.cart-content:nth-child(even) .cart-content__text {
+    order: 2; 
+    margin-left: auto; 
+}
+
+.cart-content:nth-child(even) .cart-content__img {
+    order: 1; 
+}
+
+.cart-content:nth-child(even) {
     flex-direction: row-reverse;
 }
 
@@ -150,6 +160,9 @@
 
 .cart-content__img {
     margin-left: auto;
+    width: 600px;
+    height: 100%;
+    object-fit: cover;
 }
 
 .top__h1 {
