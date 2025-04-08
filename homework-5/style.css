@@ -284,7 +284,9 @@
 
 @media (min-width: 425px) and (max-width: 767px) {
     .top {
-        padding-top: 0;
+        padding-top: 48px;
+        padding-bottom: 49px;
+    }
     }
 
     .center {
@@ -460,6 +462,12 @@
 }
 
 @media (min-width: 320px) and (max-width: 424px) {
+    .top {
+        padding-top: 48px;
+        padding-bottom: 49px;
+    }
+}
+
     .center {
         padding-left: calc(50% - 150px);
         padding-right: calc(50% - 150px);
@@ -474,7 +482,6 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
-        letter-spacing: 0px;
         text-align: center;
     }
 
@@ -484,13 +491,10 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 20px;
-        letter-spacing: 0px;
         text-align: center;
         display: flex;
         flex-direction: row;
-        justify-content: center;
         align-items: center;
-        gap: 10;
         padding: 16px 28px 16px 28px;
     }
 
@@ -525,7 +529,7 @@
     .top-cart {
         font-size: 32px;
         line-height: 39px;
-        padding-bottom: 24px;
+        padding-bottom: 48px;
     }
 
     .top__h1, .top__p, .game {
