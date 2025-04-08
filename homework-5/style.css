@@ -85,7 +85,9 @@
 
 .cart-content__text {
     width: 50%;
-    padding: 48px;
+    padding-right: 48px;
+    padding-left: 48px;
+    padding-bottom: 48px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -467,8 +469,29 @@
         background-position: 300px -103px, 15px 97px, 22px 64px, 287px 580px, 257px 557px;
     }
 
+    .header__p {
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-align: center;
+    }
+
     .header__btn {
         width: 255px;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 10;
+        padding: 16px 28px 16px 28px;
     }
 
     .cart {
