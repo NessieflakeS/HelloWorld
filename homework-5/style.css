@@ -76,21 +76,39 @@
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    position: relative;
     min-height: 500px;
-}
-
-.cart-content:nth-child(even) .cart-content__text {
-    order: 2; 
-    margin-left: auto; 
-}
-
-.cart-content:nth-child(even) .cart-content__img {
-    order: 1; 
 }
 
 .cart-content:nth-child(even) {
     flex-direction: row-reverse;
+}
+
+.cart-content__text {
+    width: 50%;
+    padding: 48px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+}
+
+.cart-content__text-name {
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 59px;
+    margin-bottom: 36px;
+}
+
+.cart-content__text-num {
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    margin-bottom: 36px;
 }
 
 .cart-content__text-btn {
@@ -99,68 +117,26 @@
     font-size: 18px;
     font-weight: 600;
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 16px 28px 16px 28px;
+    padding: 16px 28px;
     border-radius: 60px;
     background-color: rgb(32, 32, 39);
-    color: white;  
-    transition: color 0.3s; 
-    margin-left: 0;
+    color: white;
+    transition: all 0.3s;
     font-family: Montserrat;
+    border: none;
+    cursor: pointer;
 }
 
 .cart-content__text-btn:hover {
     background-color: white;
     color: black;
-}
-
-.cart-content__text {
-    width: 504px;
-    height: 249px;
-    display: flex;
-    flex-direction: column;
-    padding: 48px;
-    align-items: flex-start;
-    text-align: left;
-    margin-right: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.cart-content__text-name {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex: none;
-    align-self: stretch;
-    color: rgb(32, 32, 39);
-    font-family: Montserrat;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 59px;
-    letter-spacing: 0px;
-    text-align: left;
-    margin-bottom: 36px;
-}
-
-.cart-content__text-num {
-    padding-right: 50px;
-    color: rgb(32, 32, 39);
-    font-family: Montserrat;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0px;
-    text-align: left;
-    margin-bottom: 36px;
+    border: 1px solid rgb(32, 32, 39);
 }
 
 .cart-content__img {
-    margin-left: auto;
-    width: 600px;
+    width: 50%;
     height: 100%;
     object-fit: cover;
 }
@@ -359,23 +335,15 @@
     }
 
     .cart {
-        display: flex !important;
-        flex-direction: column !important;
         gap: 24px !important;
         align-items: center !important;
     }
 
     .cart-content {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        max-width: 400px !important;
-        border-radius: 30px !important;
-        background: white !important;
-        overflow: hidden !important;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
-        align-items: center !important; 
-        text-align: center !important; 
+        width: 100%;
+        max-width: 400px;
+        flex-direction: column;
+        min-height: auto;
     }
 
     .cart-content__img {
@@ -463,9 +431,22 @@
         line-height: 20px;
     }
 
-    .cart > article:nth-child(even), 
-    .cart > article:nth-child(odd) {
-        flex-direction: column !important;
+    .cart-content:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .cart-content__text,
+    .cart-content__img {
+        width: 100%;
+    }
+
+    .cart-content__text {
+        padding: 24px;
+        order: 2;
+    }
+
+    .cart-content__img {
+        order: 1;
     }
 
     #game1 .cart-content__img { content: url(image/gamemini-1.png); }
@@ -490,30 +471,34 @@
         width: 255px;
     }
 
+    .cart {
+        gap: 20px;
+    }
+
     .cart-content {
-        max-width: 300px !important;
+        max-width: 300px;
     }
 
     .cart-content__text {
-        padding: 12px;
+        padding: 20px;
     }
 
     .cart-content__text-name {
-        font-size: 20px;
-        line-height: 24px;
+        font-size: 32px;
+        line-height: 39px;
     }
 
     .cart-content__text-num {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 16px;
+        line-height: 20px;
     }
 
     .cart-content__text-btn {
+        width: 100%;
         max-width: 255px;
         height: 50px;
-        font-size: 14px;
+        font-size: 16px;
     }
-
     .top-cart {
         font-size: 32px;
         line-height: 39px;
