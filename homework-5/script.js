@@ -49,7 +49,7 @@ function printSquare(number) {
 function checkAge() {
   const age = prompt('Сколько вам лет?');
   
-  if (isNaN(age) {
+  if (isNaN(age)) {
     alert('Вы ввели не число');
   } else if (age < 0) {
     alert('Вы ввели неправильное значение');

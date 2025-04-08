@@ -76,6 +76,7 @@
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .cart > article:nth-child(even) {
@@ -111,10 +112,15 @@
     gap: 25px;
     display: flex;
     flex-direction: column;
-    padding-left: 48px;
+    padding: 48px;
     align-items: flex-start;
     text-align: left;
     margin-right: auto;
+    height: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 .cart-content__text-name {
@@ -142,6 +148,10 @@
     line-height: 32px;
     letter-spacing: 0px;
     text-align: left;
+}
+
+.cart-content__img {
+    margin-left: auto;
 }
 
 .top__h1 {
