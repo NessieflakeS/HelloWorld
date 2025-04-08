@@ -287,11 +287,10 @@
         padding-top: 48px;
         padding-bottom: 49px;
     }
-    }
 
     .center {
-        padding-left: calc(50% - 200px);
-        padding-right: calc(50% - 200px);
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .header {
@@ -387,7 +386,6 @@
     .cart-content__text-num {
         order: 2 !important;
         font-size: 16px !important;
-        margin: 0 0 16px 0 !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
@@ -466,11 +464,10 @@
         padding-top: 48px;
         padding-bottom: 49px;
     }
-}
 
     .center {
-        padding-left: calc(50% - 150px);
-        padding-right: calc(50% - 150px);
+        padding-left: calc(50% - 170px);
+        padding-right: calc(50% - 170px);
     }
 
     .header {
@@ -574,7 +571,6 @@
         font-family: Montserrat;
         font-weight: 700;
         line-height: 39px;
-        letter-spacing: 0px;
         text-align: left;
         text-align: center !important;
         width: 100% !important;
@@ -585,7 +581,7 @@
     .cart-content__text-num {
         order: 2 !important;
         font-size: 16px !important;
-        margin: 0 0 16px 0 !important;
+        margin-bottom: 16px;
         display: flex !important;
         flex-direction: column !important;
         justify-content: flex-start !important;
@@ -638,19 +634,19 @@
         flex-direction: column !important;
     }
 
+    .header__h1 {
+        font-size: 40px;
+        line-height: 49px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
     #game1 .cart-content__img { content: url(image/gamemini-1.png); }
     #game2 .cart-content__img { content: url(image/gamemini-2.png); }
     #game3 .cart-content__img { content: url(image/gamemini-3.png); }
     #game4 .cart-content__img { content: url(image/gamemini-4.png); }
     #game5 .cart-content__img { content: url(image/gamemini-5.png); }
     #game6 .cart-content__img { content: url(image/gamemini-6.png); }
-
-     .header__h1 {
-        font-size: 40px;
-        line-height: 49px;
-        margin-bottom: 16px;
-        text-align: center;
-    }
 }
 
 
