@@ -570,6 +570,11 @@
         transition: color 0.3s; 
     }
 
+
+    .top__h1, .top__p, .game {
+        display: none;
+    }
+
     .footer {
         padding-top: 40px;
         padding-bottom: 40px;
