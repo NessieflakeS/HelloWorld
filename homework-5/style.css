@@ -32,7 +32,7 @@
     font-family: Montserrat;
 }
 
-.header__btn {
+.header-btn {
     font-family: Montserrat;
     box-sizing: border-box;
     border: 1px solid rgb(32, 32, 39);
@@ -46,7 +46,7 @@
     margin-top: 48px;
 }
 
-.header__btn:hover {
+.header-btn:hover {
     background: white;
     color: black;
 }
@@ -165,7 +165,6 @@
     font-size: 64px;
     font-weight: 700;
     line-height: 78px;
-    padding-bottom: 24px;
     font-family: Montserrat;
     padding-bottom: 72px;
     padding-top: 46px;
@@ -461,6 +460,17 @@
     .top {
         padding-top: 48px;
         padding-bottom: 49px;
+    }
+
+    .top-cart {
+        display: block;
+        font-size: 40px;
+        line-height: 49px;
+        text-align: left;
+        padding-bottom: 32px;
+        color: white;
+        padding-top: 0;
+        padding-left: 10px;
     }
 
     .center {
