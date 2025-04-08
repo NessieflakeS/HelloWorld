@@ -492,9 +492,6 @@
     .header-btn {
     width: 285px;
     height: 55px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
     padding: 16px 28px 16px 28px;
     box-sizing: border-box;
@@ -506,7 +503,7 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 141.69%;
-    text-align: center;
+    text-align: center !important;
     text-decoration: none;
     }
 
