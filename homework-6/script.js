@@ -91,9 +91,9 @@ const results = [];
 for (let i = 0; i < rows; i++) {
   const row = []; 
   for (let j = 0; j < cols; j++) {
-    row.push(1); 
+    rows.push(1); 
   }
-  result.push(row); 
+  result.push(rows); 
 }
 
 console.log(results);
