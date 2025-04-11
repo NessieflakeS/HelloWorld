@@ -1,3 +1,11 @@
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function startMathGame() {
+  generateQuestion();
+}
+
 function generateQuestion() {
   const operations = ['+', '-', '*', '/'];
   const operation = operations[getRandomNumber(0, 3)];
@@ -22,20 +30,23 @@ function generateQuestion() {
   }
 
   const userAnswer = prompt(`${num1} ${operation} ${num2} = ?`);
-  
-  if (userAnswer === null) return; 
+
+  if (userAnswer === null) {
+    alert("Игра завершена!");
+    return;
+  }
 
   const parsedAnswer = parseFloat(userAnswer);
 
   if (isNaN(parsedAnswer)) {
     alert("Пожалуйста, введите число!");
-    generateQuestion();
+    generateQuestion(); 
   } else if (parsedAnswer === correctAnswer) {
     alert("Правильно!");
-    setTimeout(generateQuestion, 1000);
+    setTimeout(generateQuestion, 1000); 
   } else {
     alert(`Неправильно! Правильный ответ: ${correctAnswer}`);
-    setTimeout(generateQuestion, 1000);
+    setTimeout(generateQuestion, 1000); 
   }
 }
 
