@@ -59,17 +59,17 @@ function filterByPrefix(arr, prefix) {
   });
 }
 
-const result = filterByPrefix(strings, prefix);
+const result = filterByPrefix(String, prefix);
 console.log(result); 
 
 
 const numb = 32.58884;
-const roundedUp = Math.ceil(num);
+const roundedUp = Math.ceil(numb);
 console.log(roundedUp); 
 
 
 const number = 32.58884;
-const roundedDown = Math.floor(num);
+const roundedDown = Math.floor(number);
 console.log(roundedDown); 
 
 
@@ -105,18 +105,18 @@ function getRandomNumberInRange(a, b) {
 }
 
 
-const currentDat = new Date();
+const currentDate = new Date();
 
 console.log(currentDate);
 
 
-const currentDate = new Date();
+const currentDates = new Date();
 
-const futureDate = new Date(currentDate);
-futureDate.setDate(currentDate.getDate() + 73);
+const futureDates = new Date(currentDate);
+futureDates.setDate(currentDate.getDates() + 73);
 
-console.log("Текущая дата:", currentDate);
-console.log("Дата через 73 дня:", futureDate);
+console.log("Текущая дата:", currentDates);
+console.log("Дата через 73 дня:", futureDates);
 
 
 function formatDate(date) {
