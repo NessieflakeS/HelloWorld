@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem ipsum dolor sit amet.</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .blue-text {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Этот текст можно скрыть и показать</h1>
+    <button id="toggleButton">Скрыть</button>
+
+    <hr>
+
+    <p id="text">Этот абзац будет менять цвет при нажатии на кнопку.</p>
+    <button id="colorButton">Изменить цвет</button>
+
+    <hr>
+
+    <h1 id="dynamicText">Исходный текст заголовка</h1>
+    <button id="changeTextButton">Изменить текст</button>
+
+    <hr>
+
+    <p class="description">Первый элемент с классом description.</p>
+    <p class="description">Второй элемент с классом description.</p>
+    <p class="other">Абзац с другим классом (не будет изменяться).</p>
+    <p class="description">Третий элемент с классом description.</p>
+    
+    <button id="changeDescriptionsButton">Изменить все описания</button>
+    <button id="deleteDescriptionButton">Удалить первый description</button>
+
+    <hr>
+
+    <button id="addParagraphButton">Добавить новый абзац</button>
+
+    <script>
+        const title = document.querySelector('#title');
+        const toggleButton = document.querySelector('#toggleButton');
+
+        toggleButton.addEventListener('click', function() {
+            if (title.classList.contains('hidden')) {
+                title.classList.remove('hidden');
+                toggleButton.textContent = 'Скрыть';
+            } else {
+                title.classList.add('hidden');
+                toggleButton.textContent = 'Показать';
+            }
+        });
+
+        const text = document.querySelector('#text');
+        const colorButton = document.querySelector('#colorButton');
+
+        colorButton.addEventListener('click', function() {
+            text.classList.toggle('blue-text');
+        });
+
+        const dynamicText = document.querySelector('#dynamicText');
+        const changeTextButton = document.querySelector('#changeTextButton');
+
+        changeTextButton.addEventListener('click', function() {
+            dynamicText.textContent = 'Привет, мир!';
+        });
+
+        const changeDescriptionsButton = document.querySelector('#changeDescriptionsButton');
+        
+        changeDescriptionsButton.addEventListener('click', function() {
+            const descriptions = document.querySelectorAll('.description');
+            descriptions.forEach(item => {
+                item.textContent = 'Новый текст';
+            });
+        });
+
+        const addParagraphButton = document.querySelector('#addParagraphButton');
+
+        addParagraphButton.addEventListener('click', function() {
+            const newParagraph = document.createElement('p');
+            newParagraph.textContent = 'Новый абзац';
+            document.body.appendChild(newParagraph);
+        });
+
+        const deleteDescriptionButton = document.querySelector('#deleteDescriptionButton');
+
+        deleteDescriptionButton.addEventListener('click', function() {
+            const firstDescription = document.querySelector('.description');
+            if (firstDescription) {
+                firstDescription.remove();
+            }
+        });
+    </script>
+</body>
+</html>
