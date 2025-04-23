@@ -1,142 +1,107 @@
-function reverseTextGame() {
-  const userInput = prompt("Введите текст, который нужно перевернуть:");
-  if (userInput) {
-      const reversedText = userInput.split('').reverse().join('');
-      alert(`Перевернутый текст: ${reversedText}`);
+function rockPaper() {
+  const choices = ["камень", "ножницы", "бумага"];
+  
+  const userChoice = prompt("Выберите: камень, ножницы или бумага")?.toLowerCase().trim();
+  
+  if (!userChoice || !choices.includes(userChoice)) {
+      alert("Пожалуйста, введите одно из следующих: камень, ножницы или бумага");
+      return;
+  }
+  
+  const computerChoice = choices[Math.floor(Math.random() * 3)];
+  
+  let result;
+  if (userChoice === computerChoice) {
+      result = "Ничья!";
+  } else if (
+      (userChoice === "камень" && computerChoice === "ножницы") ||
+      (userChoice === "ножницы" && computerChoice === "бумага") ||
+      (userChoice === "бумага" && computerChoice === "камень")
+  ) {
+      result = "Вы победили!";
   } else {
-      alert("Вы не ввели текст!");
+      result = "Компьютер победил!";
   }
+  
+  console.log(`Ваш выбор: ${userChoice}`);
+  console.log(`Выбор компьютера: ${computerChoice}`);
+  console.log(`Результат: ${result}`);
 }
 
 
-function startQuizGame() {
-  const quiz = [
-      {
-          question: "Какой цвет небо?",
-          options: ["1. Красный", "2. Синий", "3. Зеленый"],
-          correctAnswer: 2 
-      },
-      {
-          question: "Сколько дней в неделе?",
-          options: ["1. Шесть", "2. Семь", "3. Восемь"],
-          correctAnswer: 2
-      },
-      {
-          question: "Сколько у человека пальцев на одной руке?",
-          options: ["1. Четыре", "2. Пять", "3. Шесть"],
-          correctAnswer: 2
-      }
-  ];
 
-  let correctAnswers = 0;
+const people = [
+  { name: 'Глеб', age: 29 },
+  { name: 'Анна', age: 17 },
+  { name: 'Олег', age: 7 },
+  { name: 'Оксана', age: 47 }
+];
 
-  for (let i = 0; i < quiz.length; i++) {
-      const currentQuestion = quiz[i];
-      let questionText = currentQuestion.question + "\n";
-      questionText += currentQuestion.options.join("\n");
-      
-      const userAnswer = parseInt(prompt(questionText));
-      
-      if (userAnswer === currentQuestion.correctAnswer) {
-          correctAnswers++;
-      }
+console.log(people.sort((a, b) => a.age - b.age));
+
+
+
+function isPositive(num) {
+  return num > 0;
+}
+
+function isMale(person) {
+  return person.gender === 'male';
+}
+
+function filter(arr, ruleFunction) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (ruleFunction(arr[i])) {
+      result.push(arr[i]);
+    }
   }
-
-  alert(`Вы ответили правильно на ${correctAnswers} из ${quiz.length} вопросов!`);
+  return result;
 }
 
+console.log(filter([3, -4, 1, 9], isPositive));
 
-const str = 'js';
-const upperCaseStr = str.toUpperCase();
-console.log(upperCaseStr); 
+const peple = [
+  {name: 'Глеб', gender: 'male'},
+  {name: 'Анна', gender: 'female'},
+  {name: 'Олег', gender: 'male'},
+  {name: 'Оксана', gender: 'female'}
+];
+
+console.log(filter(peple, isMale));
 
 
-function filterByPrefix(arr, prefix) {
-  const lowerCasePrefix = prefix.toLowerCase();
 
-  return arr.filter(item => {
-    return item.toLowerCase().startsWith(lowerCasePrefix);
-  });
+const intervalId = setInterval(() => {
+  console.log(new Date());
+}, 3000);
+
+setTimeout(() => {
+  clearInterval(intervalId);
+  console.log("30 секунд прошло");
+}, 30000);
+
+
+
+function delayForSecond(callback) {
+  setTimeout(callback, 1000);
 }
 
-const result = filterByPrefix(String, prefix);
-console.log(result); 
+delayForSecond(function () {
+ console.log('Привет, Глеб!');
+});
 
 
-const numb = 32.58884;
-const roundedUp = Math.ceil(numb);
-console.log(roundedUp); 
 
-
-const number = 32.58884;
-const roundedDown = Math.floor(number);
-console.log(roundedDown); 
-
-
-const num = 32.58884;
-const roundedNearest = Math.round(num);
-console.log(roundedNearest); 
-
-
-function getRandomNumberFrom1To10() {
-  const randomNumber = Math.floor(Math.random() * 10) + 1;
-  console.log(randomNumber); 
+function delayForSecond(cb) {
+  setTimeout(() => {
+      console.log('Прошла одна секунда');
+      if(cb) {  cb(); }
+  }, 1000)
 }
 
-
-function getRandomNumbersArray(n) {
-  const arrayLength = Math.floor(n / 2);
-
-  const randomNumbers = Array.from({ length: arrayLength }, () => {
-    return Math.floor(Math.random() * (n + 1)); 
-  });
-
-  return randomNumbers;
+function sayHi (name) {
+  console.log(`Привет, ${name}!`);
 }
 
-
-function getRandomNumberInRange(a, b) {
-  const min = Math.min(a, b);
-  const max = Math.max(a, b);
-
-  const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-
-  return randomNumber;
-}
-
-
-const currentDate = new Date();
-
-console.log(currentDate);
-
-
-const currentDates = new Date();
-
-const futureDates = new Date(currentDate);
-futureDates.setDate(currentDate.getDates() + 73);
-
-console.log("Текущая дата:", currentDates);
-console.log("Дата через 73 дня:", futureDates);
-
-
-function formatDate(date) {
-  const months = [
-    "января", "февраля", "марта", "апреля", "мая", "июня",
-    "июля", "августа", "сентября", "октября", "ноября", "декабря"
-  ];
-  const daysOfWeek = [
-    "воскресенье", "понедельник", "вторник", "среда",
-    "четверг", "пятница", "суббота"
-  ];
-
-  const day = date.getDate(); 
-  const month = months[date.getMonth()]; 
-  const year = date.getFullYear(); 
-  const dayOfWeek = daysOfWeek[date.getDay()]; 
-  const hours = String(date.getHours()).padStart(2, '0'); 
-  const minutes = String(date.getMinutes()).padStart(2, '0'); 
-  const seconds = String(date.getSeconds()).padStart(2, '0'); 
-
-  return `Дата: ${day} ${month} ${year} — это ${dayOfWeek}.\nВремя: ${hours}:${minutes}:${seconds}`;
-}
-
+delayForSecond(() => sayHi('Глеб'));
