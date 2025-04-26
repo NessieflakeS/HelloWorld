@@ -236,14 +236,22 @@ function startColorGame() {
         const b = (rgb >>  0) & 0xff;
         const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
         
-        const textElements = document.querySelectorAll('h1, h2, h3, p, a, button, .header, .top, .cart-content');
-        textElements.forEach(el => {
-            el.style.color = luminance > 128 ? '#000000' : '#FFFFFF';
+        const textColor = luminance > 128 ? '#000000' : '#FFFFFF';
+        document.body.style.color = textColor;
+        
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.style.color = luminance > 128 ? '#000000' : '#FFFFFF';
+            button.style.borderColor = luminance > 128 ? '#000000' : '#FFFFFF';
         });
+        
+        if (colorInfo) {
+            colorInfo.textContent = `Текущий цвет: ${randomColor}`;
+            colorInfo.style.color = luminance > 128 ? '#000000' : '#FFFFFF';
+            colorInfo.style.backgroundColor = luminance > 128 ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+        }
     }
 
-    changeBackgroundColor();
-    
     const colorButton = document.createElement('button');
     colorButton.textContent = 'Сменить цвет';
     colorButton.className = 'color-change-btn';
@@ -251,38 +259,52 @@ function startColorGame() {
     colorButton.style.bottom = '20px';
     colorButton.style.right = '20px';
     colorButton.style.padding = '10px 20px';
-    colorButton.style.backgroundColor = '#FFFFFF';
-    colorButton.style.border = 'none';
+    colorButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+    colorButton.style.border = '1px solid';
     colorButton.style.borderRadius = '5px';
     colorButton.style.cursor = 'pointer';
     colorButton.style.zIndex = '1000';
-    
-    colorButton.addEventListener('click', changeBackgroundColor);
-    
-    document.body.appendChild(colorButton);
     
     const colorInfo = document.createElement('div');
     colorInfo.className = 'color-info';
     colorInfo.style.position = 'fixed';
     colorInfo.style.bottom = '60px';
     colorInfo.style.right = '20px';
-    colorInfo.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
     colorInfo.style.padding = '5px 10px';
     colorInfo.style.borderRadius = '5px';
     colorInfo.style.zIndex = '1000';
+    
+    document.body.appendChild(colorButton);
     document.body.appendChild(colorInfo);
     
-    function updateColorInfo(color) {
-        colorInfo.textContent = `Текущий цвет: ${color}`;
-    }
+    colorButton.addEventListener('click', changeBackgroundColor);
     
-    const originalChangeBgColor = changeBackgroundColor;
-    changeBackgroundColor = function() {
-        const color = getRandomColor();
-        document.body.style.backgroundColor = color;
-        updateColorInfo(color);
-        originalChangeBgColor();
-    };
+    changeBackgroundColor();
     
-    updateColorInfo(document.body.style.backgroundColor || '#FFFFFF');
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'Закрыть';
+    closeButton.style.position = 'fixed';
+    closeButton.style.bottom = '20px';
+    closeButton.style.left = '20px';
+    closeButton.style.padding = '10px 20px';
+    closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+    closeButton.style.border = '1px solid';
+    closeButton.style.borderRadius = '5px';
+    closeButton.style.cursor = 'pointer';
+    closeButton.style.zIndex = '1000';
+    
+    closeButton.addEventListener('click', function() {
+        document.body.removeChild(colorButton);
+        document.body.removeChild(colorInfo);
+        document.body.removeChild(closeButton);
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.style.color = '';
+            button.style.borderColor = '';
+        });
+    });
+    
+    document.body.appendChild(closeButton);
 }
