@@ -216,3 +216,80 @@ function rockPaper() {
     }
 }
 
+function startColorGame() {
+    function getRandomColor() {
+        return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
+    }
+
+    const originalStyles = {
+        body: document.body.style.background,
+        header: document.querySelector('.header').style.background,
+        top: document.querySelector('.top').style.background,
+        footer: document.querySelector('.footer').style.background
+    };
+
+    function changeBackground() {
+        const color = getRandomColor();
+        const headerFooterColor = getRandomColor();
+        
+        document.body.style.background = color;
+        document.querySelector('.header').style.background = headerFooterColor;
+        document.querySelector('.top').style.background = headerFooterColor;
+        document.querySelector('.footer').style.background = headerFooterColor;
+
+        if (colorInfo) {
+            colorInfo.textContent = `Текущий цвет фона: ${color}\nЦвет хедера и футера: ${headerFooterColor}`;
+        }
+    }
+
+    const controlPanel = document.createElement('div');
+    controlPanel.style.position = 'fixed';
+    controlPanel.style.bottom = '20px';
+    controlPanel.style.right = '20px';
+    controlPanel.style.display = 'flex';
+    controlPanel.style.gap = '10px';
+    controlPanel.style.zIndex = '1000';
+
+    const changeBtn = document.createElement('button');
+    changeBtn.textContent = 'Сменить цвет';
+    changeBtn.style.padding = '10px 20px';
+    changeBtn.style.backgroundColor = '#fff';
+    changeBtn.style.color = '#000';
+    changeBtn.style.border = '1px solid #000';
+    changeBtn.style.borderRadius = '5px';
+    changeBtn.style.cursor = 'pointer';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Закрыть';
+    closeBtn.style.padding = '10px 20px';
+    closeBtn.style.backgroundColor = '#fff';
+    closeBtn.style.color = '#000';
+    closeBtn.style.border = '1px solid #000';
+    closeBtn.style.borderRadius = '5px';
+    closeBtn.style.cursor = 'pointer';
+
+    const colorInfo = document.createElement('div');
+    colorInfo.style.padding = '10px 20px';
+    colorInfo.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+    colorInfo.style.color = '#000';
+    colorInfo.style.borderRadius = '5px';
+    colorInfo.style.marginTop = '10px';
+
+    controlPanel.appendChild(changeBtn);
+    controlPanel.appendChild(closeBtn);
+    document.body.appendChild(controlPanel);
+    document.body.appendChild(colorInfo);
+
+    changeBtn.addEventListener('click', changeBackground);
+    closeBtn.addEventListener('click', function() {
+        document.body.style.background = originalStyles.body;
+        document.querySelector('.header').style.background = originalStyles.header;
+        document.querySelector('.top').style.background = originalStyles.top;
+        document.querySelector('.footer').style.background = originalStyles.footer;
+
+        document.body.removeChild(controlPanel);
+        document.body.removeChild(colorInfo);
+    });
+
+    changeBackground();
+}
