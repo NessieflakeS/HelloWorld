@@ -221,6 +221,20 @@ function startColorGame() {
         return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
     }
 
+    function getContrastingColor(baseColor) {
+        const color = baseColor.slice(1); 
+        const rgb = parseInt(color, 16); 
+        const r = (rgb >> 16) & 0xff; 
+        const g = (rgb >>  8) & 0xff; 
+        const b = (rgb >>  0) & 0xff; 
+        
+        const invertedR = 255 - r;
+        const invertedG = 255 - g;
+        const invertedB = 255 - b;
+        
+        return `#${((1 << 24) + (invertedR << 16) + (invertedG << 8) + invertedB).toString(16).slice(1)}`;
+    }
+
     const originalStyles = {
         body: document.body.style.background,
         header: document.querySelector('.header').style.background,
@@ -229,16 +243,17 @@ function startColorGame() {
     };
 
     function changeBackground() {
-        const color = getRandomColor();
-        const headerFooterColor = getRandomColor();
+        const bodyColor = getRandomColor();
+        const headerFooterColor = getContrastingColor(bodyColor);
         
-        document.body.style.background = color;
+        document.body.style.background = bodyColor;
         document.querySelector('.header').style.background = headerFooterColor;
         document.querySelector('.top').style.background = headerFooterColor;
         document.querySelector('.footer').style.background = headerFooterColor;
 
         if (colorInfo) {
-            colorInfo.textContent = `Текущий цвет фона: ${color}\nЦвет хедера и футера: ${headerFooterColor}`;
+            colorInfo.textContent = `Цвет body: ${bodyColor}\nЦвет header/footer: ${headerFooterColor}`;
+            colorInfo.style.color = getContrastingColor(headerFooterColor);
         }
     }
 
