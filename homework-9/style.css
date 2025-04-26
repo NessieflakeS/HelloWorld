@@ -284,8 +284,18 @@ html {
     font-family: Montserrat;
 }
 
-body {
-    transition: background-color 0.5s ease, color 0.5s ease;
+body, header, footer, .cart-content {
+    transition: background-color 0.5s ease;
+}
+
+.color-change-btn, .color-close-btn {
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.color-change-btn:hover, .color-close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 425px) and (max-width: 767px) {

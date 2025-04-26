@@ -218,89 +218,80 @@ function rockPaper() {
 
 function startColorGame() {
     function getRandomColor() {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
+        return '#' + Math.floor(Math.random()*16777215).toString(16).padStart(6, '0');
     }
 
-    const originalBgColor = document.body.style.backgroundColor;
-    const originalElements = [];
-    document.querySelectorAll('header, footer, .cart-content, .game-mini').forEach(el => {
-        originalElements.push({
-            element: el,
-            bgColor: el.style.backgroundColor
-        });
-    });
+    const originalStyles = {
+        body: document.body.style.backgroundColor,
+        header: document.querySelector('header').style.backgroundColor,
+        footer: document.querySelector('footer').style.backgroundColor,
+        cartContent: Array.from(document.querySelectorAll('.cart-content')).map(el => el.style.backgroundColor)
+    };
 
-    function changeBackgroundColor() {
-        const randomColor = getRandomColor();
-        document.body.style.backgroundColor = randomColor;
+    function changeBackground() {
+        const color = getRandomColor();
         
-        if (colorInfo) {
-            colorInfo.textContent = `Текущий цвет фона: ${randomColor}`;
-        }
+        document.body.style.backgroundColor = color;
+        document.querySelector('header').style.backgroundColor = color;
+        document.querySelector('footer').style.backgroundColor = color;
+        
+        document.querySelectorAll('.cart-content').forEach(el => {
+            el.style.backgroundColor = color;
+        });
+
+        colorInfo.textContent = `Текущий цвет: ${color}`;
     }
 
-    const colorButton = document.createElement('button');
-    colorButton.textContent = 'Сменить цвет фона';
-    colorButton.className = 'color-change-btn';
-    colorButton.style.position = 'fixed';
-    colorButton.style.bottom = '20px';
-    colorButton.style.right = '20px';
-    colorButton.style.padding = '10px 20px';
-    colorButton.style.backgroundColor = '#ffffff';
-    colorButton.style.color = '#000000';
-    colorButton.style.border = '1px solid #000000';
-    colorButton.style.borderRadius = '5px';
-    colorButton.style.cursor = 'pointer';
-    colorButton.style.zIndex = '1000';
-    
+    const controlPanel = document.createElement('div');
+    controlPanel.style.position = 'fixed';
+    controlPanel.style.bottom = '20px';
+    controlPanel.style.right = '20px';
+    controlPanel.style.display = 'flex';
+    controlPanel.style.gap = '10px';
+    controlPanel.style.zIndex = '1000';
+
+    const changeBtn = document.createElement('button');
+    changeBtn.textContent = 'Сменить цвет';
+    changeBtn.style.padding = '10px 20px';
+    changeBtn.style.backgroundColor = '#fff';
+    changeBtn.style.color = '#000';
+    changeBtn.style.border = '1px solid #000';
+    changeBtn.style.borderRadius = '5px';
+    changeBtn.style.cursor = 'pointer';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'Закрыть';
+    closeBtn.style.padding = '10px 20px';
+    closeBtn.style.backgroundColor = '#fff';
+    closeBtn.style.color = '#000';
+    closeBtn.style.border = '1px solid #000';
+    closeBtn.style.borderRadius = '5px';
+    closeBtn.style.cursor = 'pointer';
+
     const colorInfo = document.createElement('div');
-    colorInfo.className = 'color-info';
-    colorInfo.style.position = 'fixed';
-    colorInfo.style.bottom = '60px';
-    colorInfo.style.right = '20px';
-    colorInfo.style.padding = '5px 10px';
-    colorInfo.style.backgroundColor = '#ffffff';
-    colorInfo.style.color = '#000000';
-    colorInfo.style.border = '1px solid #000000';
+    colorInfo.style.padding = '10px 20px';
+    colorInfo.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+    colorInfo.style.color = '#000';
     colorInfo.style.borderRadius = '5px';
-    colorInfo.style.zIndex = '1000';
-    
-    document.body.appendChild(colorButton);
+
+    controlPanel.appendChild(changeBtn);
+    controlPanel.appendChild(closeBtn);
+    document.body.appendChild(controlPanel);
     document.body.appendChild(colorInfo);
-    
-    colorButton.addEventListener('click', changeBackgroundColor);
-    
-    changeBackgroundColor();
-    
-    const closeButton = document.createElement('button');
-    closeButton.textContent = 'Закрыть генератор';
-    closeButton.style.position = 'fixed';
-    closeButton.style.bottom = '20px';
-    closeButton.style.left = '20px';
-    closeButton.style.padding = '10px 20px';
-    closeButton.style.backgroundColor = '#ffffff';
-    closeButton.style.color = '#000000';
-    closeButton.style.border = '1px solid #000000';
-    closeButton.style.borderRadius = '5px';
-    closeButton.style.cursor = 'pointer';
-    closeButton.style.zIndex = '1000';
-    
-    closeButton.addEventListener('click', function() {
-        document.body.style.backgroundColor = originalBgColor;
+
+    changeBtn.addEventListener('click', changeBackground);
+    closeBtn.addEventListener('click', function() {
+        document.body.style.backgroundColor = originalStyles.body;
+        document.querySelector('header').style.backgroundColor = originalStyles.header;
+        document.querySelector('footer').style.backgroundColor = originalStyles.footer;
         
-        originalElements.forEach(item => {
-            item.element.style.backgroundColor = item.bgColor;
+        document.querySelectorAll('.cart-content').forEach((el, i) => {
+            el.style.backgroundColor = originalStyles.cartContent[i];
         });
-        
-        document.body.removeChild(colorButton);
+
+        document.body.removeChild(controlPanel);
         document.body.removeChild(colorInfo);
-        document.body.removeChild(closeButton);
     });
-    
-    document.body.appendChild(closeButton);
+
+    changeBackground();
 }
