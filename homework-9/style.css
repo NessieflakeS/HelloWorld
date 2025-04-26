@@ -284,27 +284,6 @@ html {
     font-family: Montserrat;
 }
 
-.color-change-btn {
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    font-family: 'Montserrat', sans-serif;
-}
-
-.color-change-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.color-change-btn:active {
-    transform: translateY(0);
-}
-
-.color-info {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
 body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }

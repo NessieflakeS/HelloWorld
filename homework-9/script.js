@@ -226,41 +226,34 @@ function startColorGame() {
         return color;
     }
 
+    const originalBgColor = document.body.style.backgroundColor;
+    const originalElements = [];
+    document.querySelectorAll('header, footer, .cart-content, .game-mini').forEach(el => {
+        originalElements.push({
+            element: el,
+            bgColor: el.style.backgroundColor
+        });
+    });
+
     function changeBackgroundColor() {
         const randomColor = getRandomColor();
         document.body.style.backgroundColor = randomColor;
         
-        const rgb = parseInt(randomColor.substring(1), 16);
-        const r = (rgb >> 16) & 0xff;
-        const g = (rgb >>  8) & 0xff;
-        const b = (rgb >>  0) & 0xff;
-        const luminance = 0.299 * r + 0.587 * g + 0.114 * b;
-        
-        const textColor = luminance > 128 ? '#000000' : '#FFFFFF';
-        document.body.style.color = textColor;
-        
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.style.color = luminance > 128 ? '#000000' : '#FFFFFF';
-            button.style.borderColor = luminance > 128 ? '#000000' : '#FFFFFF';
-        });
-        
         if (colorInfo) {
-            colorInfo.textContent = `Текущий цвет: ${randomColor}`;
-            colorInfo.style.color = luminance > 128 ? '#000000' : '#FFFFFF';
-            colorInfo.style.backgroundColor = luminance > 128 ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+            colorInfo.textContent = `Текущий цвет фона: ${randomColor}`;
         }
     }
 
     const colorButton = document.createElement('button');
-    colorButton.textContent = 'Сменить цвет';
+    colorButton.textContent = 'Сменить цвет фона';
     colorButton.className = 'color-change-btn';
     colorButton.style.position = 'fixed';
     colorButton.style.bottom = '20px';
     colorButton.style.right = '20px';
     colorButton.style.padding = '10px 20px';
-    colorButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-    colorButton.style.border = '1px solid';
+    colorButton.style.backgroundColor = '#ffffff';
+    colorButton.style.color = '#000000';
+    colorButton.style.border = '1px solid #000000';
     colorButton.style.borderRadius = '5px';
     colorButton.style.cursor = 'pointer';
     colorButton.style.zIndex = '1000';
@@ -271,6 +264,9 @@ function startColorGame() {
     colorInfo.style.bottom = '60px';
     colorInfo.style.right = '20px';
     colorInfo.style.padding = '5px 10px';
+    colorInfo.style.backgroundColor = '#ffffff';
+    colorInfo.style.color = '#000000';
+    colorInfo.style.border = '1px solid #000000';
     colorInfo.style.borderRadius = '5px';
     colorInfo.style.zIndex = '1000';
     
@@ -282,28 +278,28 @@ function startColorGame() {
     changeBackgroundColor();
     
     const closeButton = document.createElement('button');
-    closeButton.textContent = 'Закрыть';
+    closeButton.textContent = 'Закрыть генератор';
     closeButton.style.position = 'fixed';
     closeButton.style.bottom = '20px';
     closeButton.style.left = '20px';
     closeButton.style.padding = '10px 20px';
-    closeButton.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
-    closeButton.style.border = '1px solid';
+    closeButton.style.backgroundColor = '#ffffff';
+    closeButton.style.color = '#000000';
+    closeButton.style.border = '1px solid #000000';
     closeButton.style.borderRadius = '5px';
     closeButton.style.cursor = 'pointer';
     closeButton.style.zIndex = '1000';
     
     closeButton.addEventListener('click', function() {
+        document.body.style.backgroundColor = originalBgColor;
+        
+        originalElements.forEach(item => {
+            item.element.style.backgroundColor = item.bgColor;
+        });
+        
         document.body.removeChild(colorButton);
         document.body.removeChild(colorInfo);
         document.body.removeChild(closeButton);
-        document.body.style.backgroundColor = '';
-        document.body.style.color = '';
-        const buttons = document.querySelectorAll('button');
-        buttons.forEach(button => {
-            button.style.color = '';
-            button.style.borderColor = '';
-        });
     });
     
     document.body.appendChild(closeButton);
