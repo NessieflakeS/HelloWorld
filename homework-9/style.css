@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
@@ -17,7 +21,7 @@
     padding-bottom: 246px;
 }
 
-.header__h1 {
+.header__title {
     font-size: 64px;
     font-weight: 700;
     line-height: 78px;
@@ -25,11 +29,16 @@
     font-family: Montserrat;
 }
 
-.header__p {
+.header__description {
     font-size: 24px;
     font-weight: 400;
     line-height: 32px;
     font-family: Montserrat;
+}
+
+.header-btn-link {
+    display: inline-block; 
+    text-decoration: none; 
 }
 
 .header-btn {
@@ -43,6 +52,8 @@
     font-size: 24px;
     font-weight: 600;
     margin-top: 48px;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .header-btn:hover {
@@ -135,7 +146,7 @@
     object-fit: cover;
 }
 
-.top__h1 {
+.top__title {
     color: white;
     font-size: 64px;
     font-weight: 700;
@@ -144,7 +155,7 @@
     font-family: Montserrat;
 }
 
-.top__p {
+.top__description {
     color: white;
     font-size: 24px;
     font-weight: 400;
@@ -177,7 +188,7 @@
     flex-direction: column;
     background-color: white;
     border-radius: 30px;
-    transition: transform 1s;
+    transition: transform 0.3s ease;
 }
 
 .game-mini:hover {
@@ -298,14 +309,14 @@
         align-items: center;
     }
 
-    .header__h1 {
+    .header__title {
         font-size: 40px;
         line-height: 49px;
         margin-bottom: 16px;
         text-align: center;
     }
 
-    .header__p {
+    .header__description {
         font-size: 16px;
         line-height: 20px;
         text-align: center;
@@ -319,7 +330,7 @@
         margin: 0 auto;
     }
 
-    .top__h1, .top__p, .game {
+    .top__title, .top__description, .game {
         display: none;
     }
 
@@ -481,7 +492,7 @@
         align-items: center;
     }
 
-    .header__p {
+    .header__description {
         font-family: Montserrat;
         font-size: 16px;
         font-weight: 400;
