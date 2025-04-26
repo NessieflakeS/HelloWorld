@@ -223,17 +223,22 @@ function startColorGame() {
 
     const originalStyles = {
         body: document.body.style.background,
-        top: document.querySelector('.top').style.background
+        header: document.querySelector('.header').style.background,
+        top: document.querySelector('.top').style.background,
+        footer: document.querySelector('.footer').style.background
     };
 
     function changeBackground() {
         const color = getRandomColor();
+        const headerFooterColor = getRandomColor();
         
         document.body.style.background = color;
-        document.querySelector('.top').style.background = color;
+        document.querySelector('.header').style.background = headerFooterColor;
+        document.querySelector('.top').style.background = headerFooterColor;
+        document.querySelector('.footer').style.background = headerFooterColor;
 
         if (colorInfo) {
-            colorInfo.textContent = `Текущий цвет фона: ${color}`;
+            colorInfo.textContent = `Текущий цвет фона: ${color}\nЦвет хедера и футера: ${headerFooterColor}`;
         }
     }
 
@@ -268,6 +273,7 @@ function startColorGame() {
     colorInfo.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
     colorInfo.style.color = '#000';
     colorInfo.style.borderRadius = '5px';
+    colorInfo.style.marginTop = '10px';
 
     controlPanel.appendChild(changeBtn);
     controlPanel.appendChild(closeBtn);
@@ -277,7 +283,9 @@ function startColorGame() {
     changeBtn.addEventListener('click', changeBackground);
     closeBtn.addEventListener('click', function() {
         document.body.style.background = originalStyles.body;
+        document.querySelector('.header').style.background = originalStyles.header;
         document.querySelector('.top').style.background = originalStyles.top;
+        document.querySelector('.footer').style.background = originalStyles.footer;
 
         document.body.removeChild(controlPanel);
         document.body.removeChild(colorInfo);
