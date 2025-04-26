@@ -222,43 +222,18 @@ function startColorGame() {
     }
 
     const originalStyles = {
-        body: {
-            background: document.body.style.background,
-            backgroundColor: document.body.style.backgroundColor
-        },
-        header: {
-            background: document.querySelector('header').style.background,
-            backgroundColor: document.querySelector('header').style.backgroundColor
-        },
-        footer: {
-            background: document.querySelector('footer').style.background,
-            backgroundColor: document.querySelector('footer').style.backgroundColor
-        },
-        cartContents: Array.from(document.querySelectorAll('.cart-content')).map(el => ({
-            background: el.style.background,
-            backgroundColor: el.style.backgroundColor
-        }))
+        body: document.body.style.background,
+        top: document.querySelector('.top').style.background
     };
 
     function changeBackground() {
         const color = getRandomColor();
         
-        document.body.style.background = 'none';
-        document.body.style.backgroundColor = color;
-        
-        document.querySelector('header').style.background = 'none';
-        document.querySelector('header').style.backgroundColor = color;
-        
-        document.querySelector('footer').style.background = 'none';
-        document.querySelector('footer').style.backgroundColor = color;
-        
-        document.querySelectorAll('.cart-content').forEach(el => {
-            el.style.background = 'none';
-            el.style.backgroundColor = color;
-        });
+        document.body.style.background = color;
+        document.querySelector('.top').style.background = color;
 
         if (colorInfo) {
-            colorInfo.textContent = `Текущий цвет: ${color}`;
+            colorInfo.textContent = `Текущий цвет фона: ${color}`;
         }
     }
 
@@ -301,19 +276,8 @@ function startColorGame() {
 
     changeBtn.addEventListener('click', changeBackground);
     closeBtn.addEventListener('click', function() {
-        document.body.style.background = originalStyles.body.background;
-        document.body.style.backgroundColor = originalStyles.body.backgroundColor;
-        
-        document.querySelector('header').style.background = originalStyles.header.background;
-        document.querySelector('header').style.backgroundColor = originalStyles.header.backgroundColor;
-        
-        document.querySelector('footer').style.background = originalStyles.footer.background;
-        document.querySelector('footer').style.backgroundColor = originalStyles.footer.backgroundColor;
-        
-        document.querySelectorAll('.cart-content').forEach((el, i) => {
-            el.style.background = originalStyles.cartContents[i].background;
-            el.style.backgroundColor = originalStyles.cartContents[i].backgroundColor;
-        });
+        document.body.style.background = originalStyles.body;
+        document.querySelector('.top').style.background = originalStyles.top;
 
         document.body.removeChild(controlPanel);
         document.body.removeChild(colorInfo);
