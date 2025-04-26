@@ -284,7 +284,7 @@ html {
     font-family: Montserrat;
 }
 
-body, .top, header, footer, .cart-content {
+body, header, footer, .cart-content {
     transition: background-color 0.5s ease !important;
 }
 
