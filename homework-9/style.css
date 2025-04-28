@@ -426,6 +426,18 @@ body, .top, header, footer, .cart-content {
         font-weight: 700;
     }
 
+    .scrolling-bar__container-content {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        padding-right: 27px; 
+    }
+
+    .star {
+        width: 19px;
+        height: 19px;
+    }
+
     .cart {
         gap: 24px !important;
         align-items: center !important;
@@ -632,6 +644,18 @@ body, .top, header, footer, .cart-content {
         font-family: Montserrat;
         font-size: 16px;
         font-weight: 700;
+    }
+
+    .scrolling-bar__container-content {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        padding-right: 27px; 
+    }
+
+    .star {
+        width: 19px;
+        height: 19px;
     }
 
     .cart {
