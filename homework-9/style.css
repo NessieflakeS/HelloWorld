@@ -70,32 +70,20 @@ html {
     backdrop-filter: blur(50px);
     background: rgb(188, 236, 48);
     position: absolute; 
-    bottom: 0; 
+    bottom: 160px; 
     left: 0;
 }
 
 .scrolling-bar-content {
-    display: inline-block;
-    padding: 10px 0;
+    padding: 27px 0;
     animation: scroll 30s linear infinite;
-    font-size: 14px;
     color: rgb(32, 32, 39);
     font-family: Montserrat;
     font-size: 30px;
     font-weight: 700;
-    line-height: 110%;
-    letter-spacing: 4%;
     text-align: left;
-    text-transform: uppercase;
-    width: 422px;
-    height: 33px;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
+    text-transform: uppercase;  
     align-items: center;
-    gap: 51;
-    flex: none;
-    margin: 0px 51px;
 }
 
 @keyframes scroll {
