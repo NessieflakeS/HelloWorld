@@ -532,6 +532,13 @@ body, .top, header, footer, .cart-content {
     text-decoration: none;
     }
 
+    .header__title {
+        font-size: 40px;
+        line-height: 49px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    
     .cart {
         gap: 24px !important;
         align-items: center !important;
