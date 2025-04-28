@@ -402,6 +402,30 @@ body, .top, header, footer, .cart-content {
         padding-left: 10px;
     }
 
+    .scrolling-bar {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(50px);
+        background: rgb(188, 236, 48);
+        position: absolute; 
+        bottom: 160px; 
+        left: 0;
+    }
+    
+    .scrolling-bar__container {
+        padding: 17px 0;
+        animation: scroll 30s linear infinite;
+        text-align: left;
+        text-transform: uppercase;  
+        color: rgb(32, 32, 39);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
     .cart {
         gap: 24px !important;
         align-items: center !important;
@@ -584,6 +608,30 @@ body, .top, header, footer, .cart-content {
 
     .top__title, .top__description, .game {
         display: none;
+    }
+
+    .scrolling-bar {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(50px);
+        background: rgb(188, 236, 48);
+        position: absolute; 
+        bottom: 160px; 
+        left: 0;
+    }
+    
+    .scrolling-bar__container {
+        padding: 17px 0;
+        animation: scroll 30s linear infinite;
+        text-align: left;
+        text-transform: uppercase;  
+        color: rgb(32, 32, 39);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 700;
     }
 
     .cart {
