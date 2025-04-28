@@ -538,7 +538,11 @@ body, .top, header, footer, .cart-content {
         margin-bottom: 16px;
         text-align: center;
     }
-    
+
+    .top__title, .top__description, .game {
+        display: none;
+    }
+
     .cart {
         gap: 24px !important;
         align-items: center !important;
