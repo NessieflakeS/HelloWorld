@@ -74,26 +74,24 @@ html {
     left: 0;
 }
 
-.scrolling-bar__content {
+.scrolling-bar__container {
     padding: 27px 0;
     animation: scroll 30s linear infinite;
     text-align: left;
     text-transform: uppercase;  
-    align-items: center;
-    gap: 51px;
-    padding-left: 100%;
     color: rgb(32, 32, 39);
     font-family: Montserrat;
     font-size: 30px;
     font-weight: 700;
 }
 
-/* .scrolling-bar-content span {
-    color: rgb(32, 32, 39);
-    font-family: Montserrat;
-    font-size: 30px;
-    font-weight: 700;
-} */
+.scrolling-bar__container-content {
+    display: flex;
+    align-items: center;
+    gap: 51px;
+    padding-right: 51px; 
+}
+
 
 .star {
     width: 36px;
@@ -102,8 +100,8 @@ html {
 }
 
 @keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .top {

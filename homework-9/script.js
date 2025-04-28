@@ -294,3 +294,7 @@ function startColorGame() {
     changeBackground();
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const content = document.querySelector('.scrolling-bar-content');
+    content.innerHTML += content.innerHTML; 
+});
