@@ -631,7 +631,7 @@ body, .top, header, footer, .cart-content {
         backdrop-filter: blur(50px);
         background: rgb(188, 236, 48);
         position: absolute; 
-        bottom: 160px; 
+        bottom: 38px; 
         left: 0;
     }
     
