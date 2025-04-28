@@ -82,14 +82,18 @@ html {
     align-items: center;
     gap: 51px;
     padding-left: 100%;
-}
-
-.scrolling-bar-content span {
     color: rgb(32, 32, 39);
     font-family: Montserrat;
     font-size: 30px;
     font-weight: 700;
 }
+
+/* .scrolling-bar-content span {
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 700;
+} */
 
 .star {
     width: 36px;
