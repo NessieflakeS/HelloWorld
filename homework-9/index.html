@@ -17,9 +17,26 @@
         <h1 class="header__title">Добро пожаловать <br> на мой сайт мини-игр</h1>
         <p class="header__description">Тебе предстоит пройти несколько увлекательных игр.<br>
             Если готов, нажимай <b>"Поехали!"</b> и <b>приступай.</b></p>
-        <a class="header-btn-link" href="#go">
-            <button class="header-btn">Поехали!</button>
+        <a class="header__btn-link" href="#go">
+            <button class="header__btn">Поехали!</button>
         </a>
+        <div class="scrolling-bar">
+            <div class="scrolling-bar__container">
+                <div class="scrolling-bar__container-content">
+                    <span>ВИКТОРИНА</span>
+                    <img src="image/Star.svg" alt="•" class="star" />
+                    <span>УГАДАЙ ЧИСЛО</span>
+                    <img src="image/Star.svg" alt="•" class="star" />
+                    <span>ПЕРЕВЕРНИ ТЕКСТ</span>
+                    <img src="image/Star.svg" alt="•" class="star" />
+                    <span>ПРОСТАЯ АРИФМЕТИКА</span>
+                    <img src="image/Star.svg" alt="•" class="star" />
+                    <span>КАМЕНЬ, НОЖНИЦЫ, БУМАГА</span>
+                    <img src="image/Star.svg" alt="•" class="star" />
+                    <span>ГЕНЕРАТОР СЛУЧАЙНЫХ ЦВЕТОВ</span>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="top center">
         <div>
@@ -99,7 +116,7 @@
                 <div class="cart-content__text">
                     <h2 class="cart-content__text-name">Простая <br> викторина</h2>
                     <p class="cart-content__text-num">Отвечай на вопросы викторины с вариантами ответов.</p>
-                    <button class="cart-content__text-btn" onclick="startQuizGame()">Играть!</button>
+                    <button class="cart-content__text-btn" onclick="startQuiz()">Играть!</button>
                 </div>
                 <img class="cart-content__img" src="image/gamemax-5.png" alt="">
             </article>
@@ -108,7 +125,7 @@
                     <h2 class="cart-content__text-name">Генератор <br> случайных <br> цветов</h2>
                     <p class="cart-content__text-num">Игра, в которой при клике на кнопку
                         фон страницы меняется на случайный.</p>
-                    <button class="cart-content__text-btn">Играть!</button>
+                    <button class="cart-content__text-btn" onclick="startColorGame()">Играть!</button>
                 </div>
                 <img class="cart-content__img" src="image/gamemax-6.png" alt="">
             </article>

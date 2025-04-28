@@ -41,7 +41,7 @@ html {
     text-decoration: none; 
 }
 
-.header-btn {
+.header__btn {
     font-family: Montserrat;
     box-sizing: border-box;
     border-radius: 60px;
@@ -56,9 +56,52 @@ html {
     cursor: pointer;
 }
 
-.header-btn:hover {
+.header__btn:hover {
     background: white;
     color: black;
+}
+
+.scrolling-bar {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    background: rgb(188, 236, 48);
+    position: absolute; 
+    bottom: 160px; 
+    left: 0;
+}
+
+.scrolling-bar__container {
+    padding: 27px 0;
+    animation: scroll 30s linear infinite;
+    text-align: left;
+    text-transform: uppercase;  
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.scrolling-bar__container-content {
+    display: flex;
+    align-items: center;
+    gap: 51px;
+    padding-right: 51px; 
+}
+
+
+.star {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .top {
@@ -176,7 +219,6 @@ html {
 .game {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 450px 25px 500px;
     gap: 32px;
     margin-top: 72px;
     margin-bottom: 50px;
@@ -234,9 +276,9 @@ html {
     font-size: 32px;
     font-weight: 700;
     line-height: 39px;
-    padding-left: 32px;
-    padding-bottom: 36px;
-    padding-top: 16px;
+    margin-left: 32px;
+    margin-bottom: 36px;
+    margin-top: 16px;
     font-family: Montserrat;
 }
 
@@ -268,6 +310,7 @@ html {
     align-content: center;
     width: 108px;
     text-align: center;
+    padding: 8px 16px 10px 16px;
 }
 
 .footer {
@@ -282,6 +325,20 @@ html {
     font-weight: 600;
     line-height: 29px;
     font-family: Montserrat;
+}
+
+body, .top, header, footer, .cart-content {
+    transition: background-color 0.5s ease !important;
+}
+
+.color-change-btn, .color-close-btn {
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.color-change-btn:hover, .color-close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 @media (min-width: 425px) and (max-width: 767px) {
@@ -343,6 +400,42 @@ html {
         color: white;
         padding-top: 0;
         padding-left: 10px;
+    }
+
+    .scrolling-bar {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(50px);
+        background: rgb(188, 236, 48);
+        position: absolute; 
+        bottom: 160px; 
+        left: 0;
+    }
+    
+    .scrolling-bar__container {
+        padding: 17px 0;
+        animation: scroll 30s linear infinite;
+        text-align: left;
+        text-transform: uppercase;  
+        color: rgb(32, 32, 39);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .scrolling-bar__container-content {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        padding-right: 27px; 
+    }
+
+    .star {
+        width: 19px;
+        height: 19px;
     }
 
     .cart {
@@ -500,7 +593,7 @@ html {
         text-align: center;
     }
 
-    .header-btn {
+    .header__btn {
     width: 285px;
     height: 55px;
     align-items: center;
@@ -516,6 +609,53 @@ html {
     line-height: 141.69%;
     text-align: center !important;
     text-decoration: none;
+    }
+
+    .header__title {
+        font-size: 40px;
+        line-height: 49px;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+
+    .top__title, .top__description, .game {
+        display: none;
+    }
+
+    .scrolling-bar {
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+        box-sizing: border-box;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(50px);
+        background: rgb(188, 236, 48);
+        position: absolute; 
+        bottom: 38px; 
+        left: 0;
+    }
+    
+    .scrolling-bar__container {
+        padding: 17px 0;
+        animation: scroll 30s linear infinite;
+        text-align: left;
+        text-transform: uppercase;  
+        color: rgb(32, 32, 39);
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .scrolling-bar__container-content {
+        display: flex;
+        align-items: center;
+        gap: 27px;
+        padding-right: 27px; 
+    }
+
+    .star {
+        width: 19px;
+        height: 19px;
     }
 
     .cart {
