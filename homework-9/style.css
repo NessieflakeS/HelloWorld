@@ -61,6 +61,48 @@ html {
     color: black;
 }
 
+.scrolling-bar {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    background: rgb(188, 236, 48);
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+}
+
+.scrolling-bar-content {
+    display: inline-block;
+    padding: 10px 0;
+    animation: scroll 30s linear infinite;
+    font-size: 14px;
+    color: rgb(32, 32, 39);
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 110%;
+    letter-spacing: 4%;
+    text-align: left;
+    text-transform: uppercase;
+    width: 422px;
+    height: 33px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 51;
+    flex: none;
+    margin: 0px 51px;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
 .top {
     background-color: rgb(32, 32, 39);
     padding-top: 94px;
